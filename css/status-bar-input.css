@@ -1,0 +1,86 @@
+:root {
+  --green_font_color: #0AA2A4;
+  --std_black_color: #2C323D;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.postInputFieldContainer {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  height: 40%;
+  position: relative;
+  left: 20%;
+  top: 30%
+}
+.blogInputFieldPageWrapper {
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.orange-column {
+  background-color: orange;
+  position: absolute;
+  width: 85%;
+  left: 8%;
+  height: 20%;
+  top: 15%;
+  z-index: 1;
+}
+
+.blue-column{
+  background-color: blue;
+  position: absolute;
+  height: 60%;
+  width: 85%;
+  overflow: auto;
+  left:8%;
+  top: 20%;
+}
+
+input[type=text] {
+
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  box-sizing: border-box;
+
+}
+
+input[id=blogContent] {
+  height: 15vh;
+}
+.submitButton {
+  background-color: #e7e7e7;
+  color: black;
+  border-radius: 13px;
+  height: 30px;
+  border: 2px solid var(--green_font_color);
+  border-color: var(--std_black_color);
+}

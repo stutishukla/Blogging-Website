@@ -1,0 +1,44 @@
+:root {
+  --green_font_color: #0AA2A4;
+  --std_black_color: #2C323D;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  color: white;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.mainContent-column {
+  background-color: var(--std_black_color);
+  height: 100vh;
+  width: 100%;
+}
+
+.blue-column {
+  background-color: var(--green_font_color);
+  height: 30vh;
+  position: relative;
+  top: 33%;
+  width: 70%;
+  left: 13%;
+}
+
+.green-column {
+  background-color: green;
+  height: 100px;
+}

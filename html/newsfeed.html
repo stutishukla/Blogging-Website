@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" type="text/css" href="..\css\style.css?version=1">
+
+  <title>News Feed</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js"></script>
+  <script src="../js/pocOld.js"></script>
+
+</head>
+<body>
+
+<div class="headerGrid">
+    <div class="item1"><img src="..\Images\newcolorlogo.png" class="logo" alt=""></div>
+    <div class="item2"><p>News Feed</p></div>
+    <div class="item3"><div class="menu_bar"  id="right side" onclick="myFunction(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div> 
+  </div>  
+</div>
+
+<div class="postBlogOuter"><img src="..\Images\feather-filled-shape.png" class="feather1"  alt="">
+  <img src="..\Images\feather-filled-shape.png" class="feather2" align="middle"  alt="">
+  <div class="postBlogInner">
+    <input class="textbox" name="blog-post" type="text" placeholder="Start typing your post here...">
+    <button class="button-type1 button1" type="submit" name="writerTip">Post as Writer's Tip</button>
+    <button class="button-type1 button2" type="submit" name="blog" onclick="startAjax('http://localhost/latest/wandika/php/newsfeed-api/newsFeed.php',{'action':'blog-post'}, loadUser);">Post as Blog</button>
+  </div>
+</div>
+
+<div class="blogAndPostGrid" id="blogAndPostDisplay" >
+  <div class="blogContainer" id="blogDisplay"> 
+    <div class="smallElements">
+      <img src="..\Images\username.jpeg" class="userlogo" alt="">
+      <p class="username"><b>username</b></p>
+      <p class="timeToRead" id="timer1"><b>5 min read</b></p>
+      <p class="postedAt" id="postedAt1"><b>Posted 2 hours ago</b></p>
+      <div class="blogSpace" id="spaceForBlog1"></div>
+      <img src="..\Images\sunset.jpeg" class="blogPicture" alt="">
+    </div>
+    <div class="bottomElements">
+      <p class="genre" id="genre1"><b>fiction</b></p>
+      <div class="blogbuttons">
+        <button class="button-type2 button3" id="tag1" type="submit" name="tag">Tag</button>
+        <button class="button-type2 button4" id="feedback1" type="submit" name="feedback">Feedback to Writer</button>
+        <button class="button-type2 button5" id="save1" type="submit" name="saveBlog">Save Blog</button>
+      </div>
+    </div>
+</div>
+<div class="blogContainer" id="blogDisplay2" style="display:none;"> 
+    <div class="smallElements">
+      <img src="..\Images\username.jpeg" class="userlogo" alt="">
+      <p class="username"><b>username</b></p>
+      <p class="timeToRead" id="timer2"><b>5 min read</b></p>
+      <p class="postedAt" id="postedAt2"><b>Posted 2 hours ago</b></p>
+      <div class="blogSpace" id="spaceForBlog2"></div>
+      <img src="..\Images\sunset.jpeg" class="blogPicture" alt="">
+    </div>
+    <div class="bottomElements">
+      <p class="genre" id="genre2"><b>fiction</b></p>
+      <div class="blogbuttons">
+        <button class="button-type2 button3" id="tag2" type="submit" name="tag">Tag</button>
+        <button class="button-type2 button4" id="feedback2" type="submit" name="feedback">Feedback to Writer</button>
+        <button class="button-type2 button5" id="save2" type="submit" name="saveBlog">Save Blog</button>
+      </div>
+    </div>
+</div>
+<div class="blogContainer" id="blogDisplay3" style="display:none;"> 
+    <div class="smallElements">
+      <img src="..\Images\username.jpeg" class="userlogo" alt="">
+      <p class="username"><b>username</b></p>
+      <p class="timeToRead" id="timer3"><b>5 min read</b></p>
+      <p class="postedAt" id="postedAt3"><b>Posted 2 hours ago</b></p>
+      <div class="blogSpace" id="spaceForBlog3"></div>
+      <img src="..\Images\sunset.jpeg" class="blogPicture" alt="">
+    </div>
+    <div class="bottomElements">
+      <p class="genre" id="genre3"><b>fiction</b></p>
+      <div class="blogbuttons">
+        <button class="button-type2 button3" id="tag3" type="submit" name="tag">Tag</button>
+        <button class="button-type2 button4" id="feedback3" type="submit" name="feedback">Feedback to Writer</button>
+        <button class="button-type2 button5" id="save3" type="submit" name="saveBlog">Save Blog</button>
+      </div>
+    </div>
+</div>
+</div>
+
+<div class="sideBar">
+  <p style="color:black;">SORT BY:</p>
+  <div class="typesOfGenre">
+    <p class="sideGenre"><b>GENRE</b></p>
+    <img src="..\Images\feather-filled-shape.png" class="sidebarFeather" alt="">
+  </div>
+  <div class="writersTip">
+   <p class="sideWriter"><b>WRITER'S  TIPS</b></p>
+ </div>  <img src="..\Images\feather-filled-shape.png" class="sidebarFeather2" alt="">
+</div>
+
+<!--code for displaying tags-->
+
+<div id="tagDisplay" class="innerContent" style="display:none;">
+  <span class="close">&times;</span>
+  <p class="tagElements">I struggled to relate with this content.</p>
+  <p class="tagElements">I related to this content</p>
+  <p class="tagElements">This will benefit from additional time and work. Good start</p>
+  <p class="tagElements">You are brave for being vulnerable.</p>
+</div>
+
+<!--<div id="comments" class="commentSpace" >
+  <span class="close">&times;</span>
+      <input class="textboxForComments" name="postComments" type="text" placeholder="Comment here...">
+</div>-->
+
+<!--javascript-->
+<script>
+  // Get the tags
+var tags = document.getElementById("tagDisplay");
+// Get the button that opens the tags
+//var tagclick = document.getElementById("tag");
+// Get the <span> element that closes the tags
+var span = document.getElementsByClassName("close")[0];
+// tagclick.onclick = function() {
+//   tags.style.display = "block";
+// }
+// When the user clicks on <span> (x), close the tags
+span.onclick = function() {
+  tags.style.display = "none";
+}
+// When the user clicks anywhere outside of the tags, close it
+window.onclick = function(event) {
+  if (event.target == tags) {
+    tags.style.display = "none";
+  }
+}
+function loadUser(maindta){
+
+  // var containerDiv = document.getElementById("blogAndPostDisplay");
+  // var innerDivs = containerDiv.getElementsByTagName("DIV");
+  //  for(var i=0; i<innerDivs.length; i++)
+  //  {
+  //    alert(innerDivs[i].id);
+  //  }
+  if(maindta.length>1 && maindta.length<=2){
+    document.getElementById("blogDisplay2").style.display = "block";
+    
+     document.getElementById("spaceForBlog1").innerHTML = maindta[2]["content"];
+     document.getElementById("timer1").innerHTML = maindta[2]["time_read"];
+     document.getElementById("genre1").innerHTML = maindta[2]["genre"];
+     document.getElementById("postedAt1").innerHTML = maindta[2]["date_posted"];
+
+     document.getElementById("spaceForBlog2").innerHTML = maindta[1]["content"];
+     document.getElementById("timer2").innerHTML = maindta[1]["time_read"];
+     document.getElementById("genre2").innerHTML = maindta[1]["genre"];
+     document.getElementById("postedAt2").innerHTML = maindta[1]["date_posted"];
+}
+ else if(maindta.length>1 && maindta.length<=3){
+    document.getElementById("blogDisplay2").style.display = "block";
+    document.getElementById("blogDisplay3").style.display = "block";
+
+     document.getElementById("spaceForBlog1").innerHTML = maindta[2]["content"];
+     document.getElementById("timer1").innerHTML = maindta[2]["time_read"];
+     document.getElementById("genre1").innerHTML = maindta[2]["genre"];
+     document.getElementById("postedAt1").innerHTML = maindta[2]["date_posted"];
+
+     document.getElementById("spaceForBlog2").innerHTML = maindta[1]["content"];
+     document.getElementById("timer2").innerHTML = maindta[1]["time_read"];
+     document.getElementById("genre2").innerHTML = maindta[1]["genre"];
+     document.getElementById("postedAt2").innerHTML = maindta[1]["date_posted"];
+
+     document.getElementById("spaceForBlog3").innerHTML = maindta[0]["content"];
+     document.getElementById("timer3").innerHTML = maindta[0]["time_read"];
+     document.getElementById("genre3").innerHTML = maindta[0]["genre"];
+     document.getElementById("postedAt3").innerHTML = maindta[0]["date_posted"];
+}
+
+else{
+     document.getElementById("spaceForBlog1").innerHTML = maindta[2]["content"];
+     document.getElementById("timer1").innerHTML = maindta[2]["time_read"];
+     document.getElementById("genre1").innerHTML = maindta[2]["genre"];
+     document.getElementById("postedAt1").innerHTML = maindta[2]["date_posted"];
+}
+
+
+}
+
+
+
+</script>
+
+
+</body>
+</html>

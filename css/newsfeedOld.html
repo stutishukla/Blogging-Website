@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="..\css\newsfeed-new.css?version=1">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>News Feed Page</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js"></script>
+  <script src="../js/poc.js"></script>
+</head>
+<body>
+  <div class="newsFeedPageWrapper">
+    <div class="logoSection">
+      <img src="..\Images\newlogo.png" class="logo" onclick="window.location.href='welcome-page.html'" alt="">
+    </div>
+
+    <div class="searchBar">
+      <div class="search">
+        <input type="text" class="searchTerm" placeholder="What are you looking for?">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="topNavBar">
+      <div class='navLinks row'>
+        <div class='column'>
+          <div class='green-column'>
+            <div class="sidebar">
+              <ul>
+                <li><a href="#home">Community</a></li>
+                <li><a href="#news">Personal Page</a></li>
+                <li><a href="#about">Home</a></li>
+                <li><a href="#contact">Settings</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- blog input field  -->
+
+    <div class="blogInputFieldPageWrapper">
+
+      <div class='postInputFieldContainer mainrow'>
+        <div class='maincolumn'>
+  
+          
+            <div class="form-group" orange-column >
+              <input type="text" class="form-control" id="blogTitle" placeholder="Enter Blog Title" name="title">
+            </div>
+            <div class="form-group" blue-column>
+              <input type="text" class="form-control2" id="blogContent" placeholder="Enter blogPost" name="blogContent">
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" id="comments" name="comments" value=0 checked>
+              <label for="comments">Enable Comments</label>
+            </div>
+            <div class="wrapper">
+              <div class="file-upload">
+                <label for="file-upload">Upload Image</label>
+  
+                <input type="file" />
+                <i class="fa fa-arrow-up"></i>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-default" onclick="startAjax('http://localhost/latest/wandika/php/newsfeed-api/newsFeed.php',{'action':'blog-post'}, loadUser);">Post Blog</button>
+  
+  
+        </div>
+      </div>
+    </div>
+
+<!-- problem is the div elements aren't in the wrapper
+test how to get the div to grow and strech as the elements are added -->
+
+<div class="blogPostWrapper">
+      <!-- <iframe src='https://gfycat.com/ifr/DistortedCompetentAzurevasesponge' frameborder='0' scrolling='no' allowfullscreen width='640' height='404'></iframe><p> <a href="https://gfycat.com/distortedcompetentazurevasesponge">via Gfycat</a></p> -->
+      <div class='postContainer row'>
+        <div class='column'>
+
+          <div class='postContnet orange-column'>
+
+            <img src="..\Images\profile-icon.png" class="blogProfileImage" onclick="window.location.href='welcome-page.html'" alt="">
+
+            <div class="timeToRead" id="timeToRead1"> <p>Time To Read</p></div>
+            <div class="datePosted" id="datePosted1"> <p>Date Posted</p></div>
+
+            <div class='row'>
+              <div class='column'>
+                <div class='postDetails blue-column'>
+                  <h1 id="title1">Blog Title</h1>
+                  <p hidden id="hidden1"></p>
+                  <div class='row'>
+                    <div class='column'>
+                      <div class='blogContentFromUser blue-column'>
+<!--                         <img src="..spaceForBlog1\Images\sunset.jpeg" class="blogPicture" alt="">
+ -->                      <article id="spaceForBlog1"></article>
+                          
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="buttons">
+              <div class="box">
+                <select class="options">
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                  <option>Option 4</option>
+                  <option>Option 5</option>
+                </select>
+              </div>
+              <input class="submitButtons postAsBlogButton" type="submit" value="Post As Blog">
+              <input class="submitButtons saveBlogButton" type="submit" value="Save Blog">
+            </div>
+
+            <div class="genre"> <p id="genre1"></p></div>
+
+
+
+          </div>
+        </div>
+
+      </div>
+</div>
+
+<div class="blogPostWrapper testing" id="blogDisplay2" style="display:none;">
+      <!-- <iframe src='https://gfycat.com/ifr/DistortedCompetentAzurevasesponge' frameborder='0' scrolling='no' allowfullscreen width='640' height='404'></iframe><p> <a href="https://gfycat.com/distortedcompetentazurevasesponge">via Gfycat</a></p> -->
+      <div class='postContainer row'>
+        <div class='column'>
+
+          <div class='postContnet orange-column'>
+
+            <img src="..\Images\profile-icon.png" class="blogProfileImage" onclick="window.location.href='welcome-page.html'" alt="">
+
+            <div class="timeToRead" id="timeToRead2"> <p>Time To Read</p></div>
+            <div class="datePosted" id="datePosted2"> <p>Date Posted</p></div>
+
+            <div class='row'>
+              <div class='column'>
+                <div class='postDetails blue-column'>
+                  <h1 id="title2">Blog Title</h1>
+                   <p hidden id="hidden2"></p>
+                    <div class='row'>
+                      <div class='column'>
+                       <div class='blogContentFromUser blue-column'>
+<!--                         <img src="..\Images\sunset.jpeg" class="blogPicture" alt="">
+ -->                        <article id="spaceForBlog2"></article>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="buttons">
+              <div class="box">
+                <select class="options">
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                  <option>Option 4</option>
+                  <option>Option 5</option>
+                </select>
+              </div>
+              <input class="submitButtons postAsBlogButton" type="submit" value="Post As Blog">
+              <input class="submitButtons saveBlogButton" type="submit" value="Save Blog">
+            </div>
+
+            <div class="genre"><p id="genre2"></p></div>
+
+
+
+          </div>
+        </div>
+
+      </div>
+</div>
+
+<div class="blogPostWrapper testing2" id="blogDisplay3" style="display:none;">
+      <!-- <iframe src='https://gfycat.com/ifr/DistortedCompetentAzurevasesponge' frameborder='0' scrolling='no' allowfullscreen width='640' height='404'></iframe><p> <a href="https://gfycat.com/distortedcompetentazurevasesponge">via Gfycat</a></p> -->
+      <div class='postContainer row'>
+        <div class='column'>
+
+          <div class='postContnet orange-column'>
+
+            <img src="..\Images\profile-icon.png" class="blogProfileImage" onclick="window.location.href='welcome-page.html'" alt="">
+
+            <div class="timeToRead" id="timeToRead3"> <p>Time To Read</p></div>
+            <div class="datePosted" id="datePosted3"> <p>Date Posted</p></div>
+
+            <div class='row'>
+              <div class='column'>
+                <div class='postDetails blue-column'>
+                  <h1 id="title3">Blog Title</h1>
+                    <p hidden id="hidden3"></p>
+
+                  <div class='row'>
+                    <div class='column'>
+                      <div class='blogContentFromUser blue-column'>
+<!--                         <img src="..\Images\sunset.jpeg" class="blogPicture" alt="">
+ -->                        <article id="spaceForBlog3"></article>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="buttons">
+              <div class="box">
+                <select class="options">
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                  <option>Option 4</option>
+                  <option>Option 5</option>
+                </select>
+              </div>
+              <input class="submitButtons postAsBlogButton" type="submit" value="Post As Blog">
+              <input class="submitButtons saveBlogButton" type="submit" value="Save Blog">
+            </div>
+
+            <div class="genre"><p id="genre3"></p></div>
+
+
+
+          </div>
+        </div>
+
+      </div>
+</div>
+
+    <div class="ink">
+     <img src="..\Images\blueinkwhite.png" class="ink" onclick="window.location.href='welcome-page.html'" alt="">
+   </div>
+   <div class="globe">
+    <img src="..\Images\globe-icon-white.png" class="globe" onclick="window.location.href='welcome-page.html'" alt="">
+  </div>
+
+
+
+
+
+</div> <!-- ending tag for the newsfeed page wrapper -->
+
+
+<script>
+  // $(document).ready(function() {
+  //   loadModal('#inputForStatus');
+
+
+  // });
+ function loadUser(maindta){
+ //console.log("length of the array::"+maindta.length);
+
+ if(maindta.length>1 && maindta.length<=2){
+    document.getElementById("blogDisplay2").style.display = "block";
+    
+     document.getElementById("spaceForBlog1").innerHTML = "<span class='content'>"+ maindta[2]["content"]; +"</span>";
+     document.getElementById("spaceForBlog2").innerHTML = "<span class='content'>"+ maindta[1]["content"]; +"</span>";
+}
+ else if(maindta.length>1 && maindta.length<=3){
+    document.getElementById("blogDisplay2").style.display = "block";
+    document.getElementById("blogDisplay3").style.display = "block";
+    
+
+    document.getElementById("spaceForBlog1").innerHTML = "<span class='content'>"+ maindta[2]["content"]; +"</span>";
+    document.getElementById("title1").innerHTML = "<span class='content'>"+ maindta[2]["title"]; +"</span>";
+    document.getElementById("timeToRead1").innerHTML = "<span class='content'>"+ maindta[2]["time_read"]; +"</span>";
+    document.getElementById("datePosted1").innerHTML = "<span class='content'>"+ maindta[2]["date_posted"]; +"</span>";
+    document.getElementById("genre1").innerHTML = "<span class='content'>"+ maindta[2]["genre"]; +"</span>";
+    document.getElementById("hidden1").innerHTML=maindta[2]["post_id"];
+
+
+    document.getElementById("spaceForBlog2").innerHTML = "<span class='content'>"+ maindta[1]["content"]; +"</span>";
+    document.getElementById("title2").innerHTML = "<span class='content'>"+ maindta[1]["title"]; +"</span>";
+    document.getElementById("timeToRead2").innerHTML = "<span class='content'>"+ maindta[1]["time_read"]; +"</span>";
+    document.getElementById("datePosted2").innerHTML = "<span class='content'>"+ maindta[1]["date_posted"]; +"</span>";
+    document.getElementById("genre2").innerHTML = "<span class='content'>"+ maindta[1]["genre"]; +"</span>";
+    document.getElementById("hidden2").innerHTML=maindta[1]["post_id"];
+
+
+
+    document.getElementById("spaceForBlog3").innerHTML = "<span class='content'>"+ maindta[0]["content"]; +"</span>";
+    document.getElementById("title3").innerHTML = "<span class='content'>"+ maindta[0]["title"]; +"</span>";
+    document.getElementById("timeToRead3").innerHTML = "<span class='content'>"+ maindta[0]["time_read"]; +"</span>";
+    document.getElementById("datePosted3").innerHTML = "<span class='content'>"+ maindta[0]["date_posted"]; +"</span>";
+    document.getElementById("genre3").innerHTML = "<span class='content'>"+ maindta[0]["genre"]; +"</span>";
+    document.getElementById("hidden3").innerHTML=maindta[1]["post_id"];
+
+
+
+
+}
+else{
+     document.getElementById("spaceForBlog1").innerHTML = "<span class='content'>"+ maindta[2]["content"]; +"</span>";
+}
+
+
+ 
+ }
+</script>
+
+
+  <!-- things to do
+
+  1. relabel the names here to mathc the stuff on the page
+  2. reduce the size of the side bar container
+  3. reduce the size of the side bar icons and test
+  4. think of how to modify the side bar container
+  5. as you think of what to do with the white background  -->
+
+  <!-- on click of see more, let the page expand and occupy the whole page. every other page is pushed down. on click, show only....  -->
+
+
+
+</body>
+</html>

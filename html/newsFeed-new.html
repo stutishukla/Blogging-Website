@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="..\css\newsfeed-new.css?version=1">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>News Feed Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js"></script>
+    <script src="../js/poc.js"></script>
+</head>
+
+<body>
+    <div class="communityPageWrapper">
+
+        <div class="headerElem">
+
+            <div class="leftHeaderElems">
+
+                <div class="searchBar">
+                    <div class="search">
+                        <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                        <button type="submit" class="searchButton">
+                          <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="logOut">
+                    <a href="..\php\acct-credentials-api\welcome-page.php"> Log Out</a>
+                </div>
+
+            </div>
+
+
+            <div class="topNavBar">
+
+                <ul>
+                    <li><a href=".\newsFeed-new.html">Community</a></li>
+                    <li><a href=".\profile-page.html">Profile</a></li>
+                    <li><a href="..\php\settings-api\settings.php">Settings</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="logoSection">
+            <img src="..\Images\newlogo.png" class="logo" onclick="window.location.href='welcome-page.html'" alt="">
+        </div>
+        <div class="newsFeedPageWrapper">
+            <!-- blog input field  -->
+
+            <div class="blogInputFieldPageWrapper">
+
+                <div class='postInputFieldContainer mainrow'>
+                    <div class='maincolumn'>
+
+
+                        <div class="form-group ">
+                            <input type="text" class="form-control" id="blogTitle" placeholder="Enter Blog Title" name="title">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control2" id="blogContent" placeholder="Enter blogPost" name="blogContent" onkeyup="calcRT(this)">
+                            <p hidden id="readingTime"></p>
+                        </div>
+
+                        <div class="blogInputBottomElements">
+                            <div class="checkbox">
+                                <input type="checkbox" id="comments" name="comments" checked>
+                                <label for="comments">Enable Comments</label>
+                            </div>
+
+                            <div class="box selectGenre">
+                                <select class="genreOptions">
+                                  <option>Cultural</option>
+                                  <option>Spiritual</option>
+                                  <option>Relationships</option>
+                                  <option>Health</option>
+                                  <option>Option 5</option>
+                                </select>
+                            </div>
+
+                            <div class="postButton">
+                                <input class="submitButtons postAsBlogButton" type="submit" onclick="startAjax('https://webdev.cse.buffalo.edu/wandika/final/wandika/php/newsfeed-api/newsFeed.php',{'action':'blog-post'}, loadUser);" value="Post As Blog">
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- problem is the div elements aren't in the wrapper
+test how to get the div to grow and strech as the elements are added -->
+            <div class="blogPostWrapper">
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+    <!-- ending tag for the community page wrapper -->
+
+    <script>
+        //for getting data on the onload of the page.
+        var posts = ['', '', '']
+        window.onload = function() {
+            startAjaxOnLoad('https://webdev.cse.buffalo.edu/wandika/final/wandika/php/newsfeed-api/newsFeed.php', {
+                'action': 'on-load'
+            }, loadUser);
+        };
+        //for setting tags.
+        $(document).ready(function() {
+            $(document).on('change', 'select', function() {
+                //debugger
+                var value = this.options[this.selectedIndex].value;
+                setTags('https://webdev.cse.buffalo.edu/wandika/final/wandika/php/newsfeed-api/newsFeed.php', {
+                    'action': 'set-tag',
+                    'postid': this.options[this.selectedIndex].dataset.postId,
+                    'tag': value
+                });
+            });
+        });
+        //set commemts for green blog post-- need to add for the rst two as well
+        $(document).ready(function() {
+            $("#commentSection").change(function() {
+                setComment('https://webdev.cse.buffalo.edu/wandika/final/wandika/php/newsfeed-api/newsFeed.php', {
+                    'action': 'set-comment',
+                    'postid': $('#hidden2').text(),
+                    'feedback': $('.commentSection').val()
+                });
+            });
+        });
+        //referred this code from - codepen.io/balasubramanim/pen/xypRMP-- for calculating time to read;
+        window.calcRT = ev => {
+            const wordsPerMinute = 200; // Average case.
+            let result;
+            let textLength = ev.value.split(" ").length; // Split by words
+            if (textLength > 0) {
+                let value = Math.ceil(textLength / wordsPerMinute);
+                result = `~${value} min read`;
+            }
+            document.getElementById("readingTime").innerText = result;
+        };
+        //load user details
+        function loadUser(maindta) {
+            //debugger
+            ids = $(".post_id");
+            blogIds = [];
+            for (let i = 0; i < ids.length; i++) {
+                blogIds.push(ids[i].innerText);
+            }
+            for (var i = maindta.length-1; i >= 0; i++) {
+                if (blogIds.indexOf(maindta[i]["post_id"]) == -1) {
+                    $('.blogPostWrapper').append(
+                        '<div class="postContainer row"><div class="column"><div class="postContnet orange-column"><div class="timeToRead" id="timeToRead1"><p><span class="content">' + maindta[i]["time_read"] + '</span></p></div><div class="datePosted" id="datePosted1"> <p><span class="content">' + maindta[i]["date_posted"] + '</span></p></div><div class="row"><div class="column"><div class="postDetails blue-column"><h1 id="title1"><span class="content">' + maindta[i]["title"] + '</span></h1><p hidden id="hidden1"><span class="content post_id">' + maindta[i]["post_id"] + '</span></p><div class="row"><div class="column"><div class="blogContentFromUser blue-column"><article id="spaceForBlog1"><span class="content">' + maindta[i]['content'] + '</span></article></div></div></div></div></div></div><div class="buttons"><div class="box"><select class="options1"><option data-post-id=' + maindta[i]["post_id"] + ' value="Option1">Option 1</option><option data-post-id=' + maindta[i]["post_id"] + ' value="Option2">Option 2</option><option data-post-id=' + maindta[i]["post_id"] + ' value="Option3">Option 3</option><option data-post-id=' + maindta[i]["post_id"] + ' value="Option4">Option 4</option><option data-post-id=' + maindta[i]["post_id"] + ' value="Option5">Option 5</option></select></div><input onclick=saveComment(this) class="submitButtons feedBackButton" data-post-feedback="feedBackInput-' + maindta[i]["post_id"] + '"data-post-id=' + maindta[i]["post_id"] + 'type="submit" value="Feedback to Writer"><div id="feedBack"><input type="text" class="form-control" id="feedBackInput-' + maindta[i]["post_id"] + '" placeholder="Type your feedback..." name="feedback"></div><input class="submitButtons saveBlogButton" type="submit" value="Save Blog" data-post-id=' + maindta[i]["post_id"] + ' onclick="saveBlog(this)"><p id="genre1"><span class="content">' + maindta[i]["genre"] + '</span></p><p hidden id="checkComment"><span class="content">' + maindta[i]["allow_comments"] + '</span></p></div></div></div></div>')
+                    var text = $('#checkComment').text();
+                    console.log("text value::" + text);
+                    // debugger
+                    if (maindta[i]["allow_comments"] == '0') {
+                        document.getElementById("feedBackInput-" + maindta[i]["post_id"]).classList.add('hide');
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- things to do
+  1. relabel the names here to mathc the stuff on the page
+  2. reduce the size of the side bar container
+  3. reduce the size of the side bar icons and test
+  4. think of how to modify the side bar container
+  5. as you think of what to do with the white background  -->
+    <!-- on click of see more, let the page expand and occupy the whole page. every other page is pushed down. on click, show only....  -->
+</body>
+</html>

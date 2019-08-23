@@ -1,0 +1,371 @@
+:root {
+  --green_font_color: #0AA2A4;
+  --std_black_color: #2C323D;
+}
+
+body {
+  font: 100% Verdana, sans-serif;
+  color: var(--green_font_color); }
+
+/* styling for the page title content */
+h1.wandika {
+  font-weight: bold;
+  font-size: 130px; }
+
+.top_word {
+  position: relative;
+  right: 90px; }
+
+.bottom_word {
+  position: relative;
+  bottom: 160px;
+  left: 150px; }
+
+hr.wandika_bar {
+  position: absolute;
+  border: 10px solid var(--green_font_color);
+  border-radius: 5px;
+  width: 60%;
+  right: 250px;
+  top: 280px; }
+
+.title_icon {
+  position: relative;
+  bottom: 570px;
+  left: 430px; }
+
+.title_group {
+  position: absolute;
+  right: -300px; }
+
+/* styling for the main content on the spalsh page */
+main p {
+  color: var(--std_black_color);
+  position: relative;
+  top: 300px;
+  left: 130px;
+  display: inline;
+  white-space: pre;
+  font-size: 20px;
+  line-height: 1.4em; }
+
+p img {
+  width: 50px;
+  height: 30px; }
+
+.left_navicons {
+  display: inline-block;
+  position: relative;
+  top: 223px;
+  left: 120px;
+  white-space: pre;
+  line-height: 1.4em; }
+
+.main_content {
+  position: absolute;
+  top: 50px; }
+
+/* left side and right side divdie the page elements into left side and right side  */
+#left_side {
+  position: absolute;
+  left: 40px; }
+
+#right_side {
+  position: absolute;
+  right: 500px; }
+
+/* styling of the menu icon */
+.menu_bar {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  right: 100px;
+  top: 50px; }
+
+
+/* styling for the buttons */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px; }
+
+.container .button {
+  position: relative;
+  top: 650px;
+  left: 1100px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  color: black;
+  font-size: 16px;
+  padding: 10px 120px;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  text-align: center;
+  white-space: nowrap;
+  border: 2px solid var(--green_font_color); }
+
+.container .button:hover {
+  background-color: black;
+  color: white; }
+
+#left_btn {
+  position: absolute;
+  left: 400px; }
+
+/* styling for the login modal */
+.modal, .acct_modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */ }
+
+/* Modal Content */
+.modal-content, .acct-content {
+  background-color: var(--std_black_color);
+  border: 2px solid var(--green_font_color);
+  border-color:  var(--green_font_color);
+  border-radius: 50px;
+  height: 480px;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+  left: 35px;
+  width: 1090px;
+  color: white;
+
+  font-family: Verdana, sans-serif; 
+}
+
+.new-user-content{
+  background-color: var(--std_black_color);
+  border: 2px solid var(--green_font_color);
+  border-color:  var(--green_font_color);
+  border-radius: 50px;
+  height: 550px;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+  left: 35px;
+  width: 1090px;
+  color: white;
+
+  font-family: Verdana, sans-serif;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold; }
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer; }
+
+/* LOGIN DETAILS CONTENT STYLING */
+form {
+  text-align: center;
+  font-family: Verdana, sans-serif;
+  line-height: 30px;
+  height: 60%;
+  overflow: auto; }
+
+  input {
+
+   padding: 15px;
+   width: 450px;
+   border: 3px solid var(--green_font_color);
+
+  }
+
+input::placeholder {
+  color: white; }
+
+input[type=text] {
+  margin: 15px;
+  background-color: var(--std_black_color);
+  border: 1px solid var(--green_font_color);
+  color: white;
+  box-sizing: border-box;
+  text-align: center; }
+
+
+
+input[type=submit] {
+  padding: 15px;
+  background-color: #666666;
+  border: 2px solid var(--green_font_color);
+  color: white;
+  box-sizing: border-box;
+  border-radius: 35px; }
+
+#login_card {
+  width: 1000px;
+  height: 450px;
+  margin: auto;
+  position: relative;
+  top: 30px; }
+
+  /*.bottomNavLinks a {
+    position: absolute;
+    top: 90%;
+    color: white;
+    font-size: 13px;
+}*/
+#welcome_link{
+  position: relative;
+  color:white;
+  font-size: 13px;
+}
+#create_account_link{
+  position: relative;
+  left:80%;
+  color:white;
+  font-size: 13px;
+}
+#login_link{
+  position: relative;
+  left:85%;
+  color:white;
+  font-size: 13px;
+}
+
+#forgot a {
+    text-align: left;
+    text-indent: 275px;
+    font-size: 12px;
+    color: white;
+    font-weight: 200;
+    position: absolute;
+    left: 0.2%;
+}
+
+
+.bottomNavLinks a {
+    position: absolute;
+    top: 90%;
+    color: white;
+    font-size: 13px;
+}
+
+#create_account_link1 {
+    position: absolute;
+    left: 90%;
+}
+
+
+  /*styling for the create account model*/
+
+   .acct-content #login {
+
+    position: relative;
+    top: -60px;
+  }
+
+  .acct-content input[type=text] {
+  margin: 8px;
+  background-color: var(--std_black_color);
+  border: 1px solid var(--green_font_color);
+  color: white;
+  box-sizing: border-box;
+  text-align: center; }
+
+  /*style for new user  information model*/
+  /* #new_user_card{
+    width: 1000px;
+    height: 500px;
+    margin: auto;
+    position: relative;
+    top: 30px; 
+  }
+  
+  .acct-content #new_user{
+    position: relative;
+    top: -60px;
+  } */
+
+
+
+h1 {
+  font-family: Ubuntu;
+  text-align: center; }
+
+hr.login_line {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  overflow: hidden;
+  border-style: inset;
+  border-color: #666666;
+  border-width: .5px; }
+
+a:link {
+  text-decoration: none;
+  color: white; }
+
+#forgot {
+  text-align: left;
+  text-indent: 275px;
+  font-size: 12px;
+  color: white;
+  font-weight: 200; }
+
+#alt_login {
+  text-align: left;
+  text-indent: 275px;
+  padding: 8px 0; }
+
+.social_media_icons {
+
+  width: 25px;
+  height: 25px;
+  position: relative;
+  top: 9px;
+
+  }
+
+.facebook {
+ position: relative;
+  right: 30px; }
+
+.twitter {
+  position: relative;
+  right: 15px; }
+
+.google {
+ position: relative;
+  right: 4px; }
+  
+.error{
+  color:red;
+  text-align:center;
+  }
+  #submitforForgot{
+    position :relative;
+}
+#headingForForgot{
+  position:relative;
+  right:12%;
+}

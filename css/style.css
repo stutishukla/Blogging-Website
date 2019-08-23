@@ -1,0 +1,320 @@
+body {
+  font: 100% Verdana, sans-serif;
+  color: #0AA2A4;}
+
+.headerGrid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  height:150px;}
+
+.headerGrid > div {
+ font-size: 30px;}
+
+.logo{
+  width:200px;
+  height:170px;}
+
+.blogAndPostGrid {
+  display:grid;
+  position:relative;
+  left:20%;
+  top:10px;
+  height:700px;
+  width: 70%;
+  background-color: #2C323D;}
+
+.blogContainer{
+  height: 400px;
+  width:84%;
+  background-color: white;
+  position: relative;
+  left: 8%;
+  top:40px;}
+
+.content{
+  height:250px;
+  width:75%;
+  position:relative;
+  top:18%;
+  left:15%;
+  border: 1px solid #2C323D;}
+
+.postContainer{
+  height: 200px;
+  width:84%;
+  background-color: white;
+  position: relative;
+  left: 8%;
+  top:15px;}
+
+.item1{
+  padding-left:12%;}
+
+.item2{
+  position:relative;
+  left:20%;
+  padding-top: 5%;}
+
+.postBlogOuter {
+  height: 150px;
+  width: 70%;
+  margin-left: 20%;
+  background-color: #0AA2A4;
+  position: relative;}
+
+.postBlogInner{
+  height: 100px;
+  width:80%;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);}
+
+.center{
+  margin: 0 auto;
+  left: 25%;}
+
+.feather1{
+  position: relative;
+  top:20%;
+  opacity: 0.2;
+  width:100px;
+  height:100px;}
+
+.feather2{
+  position: relative;
+  left: 79%;
+  bottom: 12%;
+  opacity: 0.2;
+  width:100px;
+  height:100px;}
+
+.readAndPosted{
+  width:100%;
+  height:10%;}
+
+.genre{
+  position:relative;
+  left:2%;
+  bottom:3%;
+  font-size:80%;
+  color:black;}
+
+.genre2{
+  position:relative;
+  left:2%;
+  bottom:38%;
+  font-size:80%;
+  color:black;}
+
+.textbox{
+  position:relative;
+  left:0.1%;
+  top:0.3%;
+  width:99%;
+  height: 55%;
+  border: 1px solid #0AA2A4;
+  border-radius: 5px;}
+
+.menu_bar {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  right: 100px;
+  top: 70px;}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #2C323D;
+  margin: 6px 0;
+  transition: 0.4s;}
+
+.button-type1{
+  position:relative;
+  left: 63%;
+  top:5%;
+  background-color: #e7e7e7;
+  color: black;
+  border-radius: 13px;
+  height: 30px;
+  border: 2px solid #0AA2A4;}
+
+.smallElements{
+  height:100%;}
+
+.userlogo{
+  position:relative;
+  left:15px;
+  top:20px;
+  width:85px;
+  height:85px;}
+
+.username{
+  position:relative;
+  left:2%;
+  bottom:23px;
+  font-size:100%;
+  color:black;}
+
+.timeToRead{
+  position:relative;
+  left:15%;
+  bottom:90px;
+  font-size:80%;
+  color:black;}
+
+.postedAt{
+  position:relative;
+  left:73.5%;
+  bottom:119px;
+  font-size:80%;
+  color:black;}
+
+.blogPicture{
+  position: relative;
+  bottom:245px;
+  left: 15%;
+  width:75%;
+  height: 30%;
+  border: 1px solid #2C323D;}
+
+.blogSpace{
+  position:relative;    
+  left:15%;
+  bottom:0.2%;
+  background-color: #2C323D;
+  width:75%;
+  height: 30%;
+  border: 1px solid #2C323D;
+  color:white;}
+
+.bottomElements{
+  position:relative;
+  bottom:68px;}
+
+.blogbuttons{
+  position: relative;
+  bottom:40px;}
+
+.button-type2{
+  background-color: white;
+  color: black;
+  border-radius: 13px;
+  height: 30px;
+  border: 2px solid black;}
+
+.button3{
+  position:relative;
+  left:40.3%;
+  bottom:0.1%;
+  width: 100px;}
+
+.button4{
+  position:relative;
+  left:40.8%;
+  width: 200px;}
+
+.button5{
+  position:relative;
+  left:41.2%;
+  width: 100px;}
+
+.username2{
+  position:relative;
+  bottom:11%;
+  left:2%;
+  font-size:100%;
+  color:black;}
+
+.button2{
+  width: 120px;}
+
+.button6{
+  position:relative;
+  left:75%;
+  bottom:40px;
+  width: 120px;}
+
+.postSpace{
+  position:relative;    
+  left:15%;
+  bottom:42%;
+  background-color: #0AA2A4;
+  width:75%;
+  height: 45%;
+  border: 1px solid #0AA2A4;
+  color:white;}
+
+.sideBar{
+  background-color:white;
+  width:150px;
+  height:150px;
+  position:relative;
+  bottom:600px;
+  left:8%;}
+
+.typesOfGenre{
+  position:relative;
+  height:40px;
+  width:30px;}
+
+.sidebarFeather{
+  width:30px;
+  height:23px;
+  position:relative;
+  right:15px;
+  bottom:30px;}
+
+.sideGenre{
+  font-size:12px;
+  position:relative;
+  left:15px;}
+
+.writersTip{
+  position:relative;
+  bottom:20px;
+  height:40px;}
+
+.sidebarFeather2{
+  width:30px;
+  height:23px;
+  position:relative;
+  bottom:65px;
+  right:18px;}
+
+.sideWriter{
+  font-size:12px;
+  position:relative;
+  left:15px;}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;}
+
+.innerContent{
+  position:relative;
+  left:44%;
+  bottom:625px;
+  width:20%;
+  height:20%;
+  background-color:white;
+  border: 1px solid #0AA2A4;
+  border-radius: 15px; 
+  text-align:center;}
+
+.tagElements{
+  color:black;
+  font-size:12px;
+  padding-left:5px;}
+

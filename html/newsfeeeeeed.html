@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="..\css\newsfeed-new1.css?version=1">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>News Feed Page</title>
+</head>
+<body>
+  <div class="newsFeedPageWrapper">
+    <div class="logoSection">
+      <img src="..\Images\newlogo.png" class="logo" onclick="window.location.href='welcome-page.html'" alt="">
+    </div>
+
+    <div class="searchBar">
+      <div class="search">
+        <input type="text" class="searchTerm" placeholder="What are you looking for?">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="topNavBar">
+      <div class='navLinks row'>
+        <div class='column'>
+          <div class='green-column'>
+            <div class="sidebar">
+              <ul>
+                <li><a href="#home">Community</a></li>
+                <li><a href="#news">Personal Page</a></li>
+                <li><a href="#about">Home</a></li>
+                <li><a href="#contact">Settings</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- blog input field  -->
+
+    <div class="blogInputFieldPageWrapper">
+
+      <div class='postInputFieldContainer mainrow'>
+        <div class='maincolumn'>
+  
+          <form action="/action_page.php">
+            <div class="form-group " >
+              <input type="text" class="form-control" id="blogTitle" placeholder="Enter Blog Title" name="title">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="blogContent" placeholder="Enter blogPost" name="blogContent">
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" name="remember"> Enable Comments</label>
+            </div>
+            <div class="wrapper">
+              <div class="file-upload">
+                <label for="file-upload">Upload Image</label>
+                <input type="file" />
+                <i class="fa fa-arrow-up"></i>
+              </div>
+            </div>
+            <div class="box selectGenre">
+              <select class="options">
+                <option>Genre List</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+                <option>Option 5</option>
+              </select>
+            </div>
+            <input class="submitButtons postAsBlogButton" type="submit" value="Post As Blog">
+    
+          </form>
+  
+  
+        </div>
+      </div>
+    </div>
+
+    
+
+<!-- problem is the div elements aren't in the wrapper
+test how to get the div to grow and strech as the elements are added -->
+
+    <div class="blogPostWrapper">
+      <!-- <iframe src='https://gfycat.com/ifr/DistortedCompetentAzurevasesponge' frameborder='0' scrolling='no' allowfullscreen width='640' height='404'></iframe><p> <a href="https://gfycat.com/distortedcompetentazurevasesponge">via Gfycat</a></p> -->
+      <div class='postContainer row'>
+        <div class='column'>
+
+          <div class='postContnet orange-column'>
+
+            <img src="..\Images\profile-icon.png" class="blogProfileImage" onclick="window.location.href='welcome-page.html'" alt="">
+
+            <div class="timeToRead"> <p>Time To Read</p></div>
+            <div class="datePosted"> <p>Date Posted</p></div>
+
+            <div class='row'>
+              <div class='column'>
+                <div class='postDetails blue-column'>
+                  <h1>Blog Title</h1>
+
+                  <div class='row'>
+                    <div class='column'>
+                      <div class='blogContentFromUser blue-column'>
+                        <img src="..\Images\sunset.jpeg" class="blogPicture" alt="">
+                        <article>
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="buttons">
+              <div class="box">
+                <select class="options">
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                  <option>Option 4</option>
+                  <option>Option 5</option>
+                </select>
+              </div>
+              <input class="submitButtons feedBackButton" type="submit" value="Feedback to Writer">
+              <input class="submitButtons saveBlogButton" type="submit" value="Save Blog">
+            </div>
+
+            <div class="genre"> <p>Genre</p></div>
+
+
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+    <div class="blogPostWrapper ">
+      <!-- <iframe src='https://gfycat.com/ifr/DistortedCompetentAzurevasesponge' frameborder='0' scrolling='no' allowfullscreen width='640' height='404'></iframe><p> <a href="https://gfycat.com/distortedcompetentazurevasesponge">via Gfycat</a></p> -->
+      <div class='postContainer row'>
+        <div class='column'>
+
+          <div class='secondBlogPost orange-column'>
+
+            <img src="..\Images\profile-icon.png" class="blogProfileImage" onclick="window.location.href='welcome-page.html'" alt="">
+
+            <div class="timeToRead"> <p>Time To Read</p></div>
+            <div class="datePosted"> <p>Date Posted</p></div>
+
+            <div class='row'>
+              <div class='column'>
+                <div class='postDetails blue-column'>
+                  <h1>Blog Title</h1>
+
+                  <div class='row'>
+                    <div class='column'>
+                      <div class='blogContentFromUser blue-column'>
+                        <img src="..\Images\sunset.jpeg" class="blogPicture" alt="">
+                        <article>
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="buttons">
+              <div class="box">
+                <select class="options">
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                  <option>Option 4</option>
+                  <option>Option 5</option>
+                </select>
+              </div>
+              <input onclick="showInputForFeedBackButton()" class="submitButtons feedBackButton" type="submit" value="Feedback to Writer">
+              <div id="feedBack">
+                <input name="feedback" type="text" placeholder="Please give your feedback..">
+              </div>
+              <input class="submitButtons saveBlogButton" type="submit" value="Save Blog">
+            </div>
+
+            <div class="genre"> <p>Genre</p></div>
+
+
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="blogPostWrapper ">
+      <!-- <iframe src='https://gfycat.com/ifr/DistortedCompetentAzurevasesponge' frameborder='0' scrolling='no' allowfullscreen width='640' height='404'></iframe><p> <a href="https://gfycat.com/distortedcompetentazurevasesponge">via Gfycat</a></p> -->
+      <div class='postContainer row'>
+        <div class='column'>
+
+          <div class='thirdBlogPost orange-column'>
+
+            <img src="..\Images\profile-icon.png" class="blogProfileImage" onclick="window.location.href='welcome-page.html'" alt="">
+
+            <div class="timeToRead"> <p>Time To Read</p></div>
+            <div class="datePosted"> <p>Date Posted</p></div>
+
+            <div class='row'>
+              <div class='column'>
+                <div class='postDetails blue-column'>
+                  <h1>Blog Title</h1>
+
+                  <div class='row'>
+                    <div class='column'>
+                      <div class='blogContentFromUser blue-column'>
+                        <img src="..\Images\sunset.jpeg" class="blogPicture" alt="">
+                        <article>
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="buttons">
+              <div class="box">
+                <select class="options">
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                  <option>Option 4</option>
+                  <option>Option 5</option>
+                </select>
+              </div>
+              <input class="submitButtons feedBackButton" type="submit" value="Feedback to Writer">
+              <input class="submitButtons saveBlogButton" type="submit" value="Save Blog">
+            </div>
+
+            <div class="genre"> <p>Genre</p></div>
+
+
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    
+
+
+    
+
+
+    <div class="ink">
+     <img src="..\Images\blueinkwhite.png" class="ink" onclick="window.location.href='welcome-page.html'" alt="">
+   </div>
+   <div class="globe">
+    <img src="..\Images\globe-icon-white.png" class="globe" onclick="window.location.href='welcome-page.html'" alt="">
+  </div>
+
+
+
+
+
+</div> <!-- ending tag for the newsfeed page wrapper -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../js/newsFeed.js"></script>
+<script>
+  $(document).ready(function() {
+    loadModal('#inputForStatus');
+  });
+</script>
+
+
+  <!-- things to do
+  1. relabel the names here to mathc the stuff on the page
+  2. reduce the size of the side bar container
+  3. reduce the size of the side bar icons and test
+  4. think of how to modify the side bar container
+  5. as you think of what to do with the white background  -->
+
+  <!-- on click of see more, let the page expand and occupy the whole page. every other page is pushed down. on click, show only....  -->
+
+
+
+</body>
+</html>

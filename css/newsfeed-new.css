@@ -1,0 +1,135 @@
+:root {
+    --green_font_color: #2a5161;
+    --std_black_color: #2C323D;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+    color: white;
+}
+
+.communityPageWrapper {
+    background-color: var(--green_font_color);
+}
+
+.headerElem {
+    height: 10vh;
+}
+
+.logoSection img {
+    width: 100px;
+    height: 100px;
+}
+
+.leftHeaderElems {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* styling for the input field starts here.. input field is the place where the post is typed */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    padding: 16px;
+    text-align: center;
+}
+
+.blogInputFieldPageWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.postInputFieldContainer {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 23%;
+    color: black;
+}
+
+.postAsBlogButton {
+    background-color: white;
+    color: black;
+    border-radius: 13px;
+    height: 30px;
+    border: 2px solid rgb(250, 249, 249);
+}
+
+input[type=text] {
+    padding: 12px 20px;
+    width: 95%;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+
+input[id=blogContent] {
+    height: 10vh;
+}
+
+.box select {
+    padding: 0.5em 1.5em;
+    width: 150px;
+    height: 32px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 13px;
+}
+
+.blogInputBottomElements {
+    display: inline-block;
+}
+
+.maincolumn {
+    width: 90%;
+}
+
+.selectGenre {}
+
+.hide {
+    display: none;
+}
+
+
+/* styling for the blog post begins here */
+
+.blogPostWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.column {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.postConainer {}
+
+.postContnet {
+    background-color: white;
+    color: black;
+    height: 40%;
+    width: 98%;
+    color: black;
+}
+
+.timeToRead {}

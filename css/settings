@@ -1,0 +1,112 @@
+:root {
+  --green_font_color: #0AA2A4;
+  --std_black_color: #2C323D;
+}
+
+body{
+  background-color: #2C323D;
+}
+
+h1{
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  color: white;
+  
+}
+
+#settings-card{
+  margin: auto;
+  width: 100%;
+  height: 100vh;
+  background-color: #2C323D;
+}
+
+.settings-page-content{
+  position: absolute;
+  top: 20%;
+  width: 100%;
+}
+
+form{
+  width: 100%;
+  display: grid;
+  position: relative;
+  
+}
+
+#change_password, #first_name, 
+#last_name, #email, #country,
+#country_code,
+#submit-button{
+  position: relative;
+  left: 37%;
+}
+
+
+
+#h-bar{
+  margin: 50px;
+  width: 90%;
+  color: lightgrey;
+}
+
+input[type=text]{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  color: black;
+  background-color: #2C323D;
+  margin: 5px;
+  height: 40px;
+  width: 25%;
+  border: 2px solid #0AA2A4;
+  color: white;  
+  text-align: center;
+  text-decoration: none;
+}
+
+input[type=text]:hover{
+  margin: auto;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  color: black;
+  background-color: #2C323D;
+  margin: 5px;
+  height: 40px;
+  width: 25%;
+  border: 2px solid white;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+input[type=submit]{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  color: black;
+  background-color: #2C323D;
+  margin: 5px;
+  height: 40px;
+  width: 25%;
+  border: 2px solid #0AA2A4;
+  border-radius: 25px;
+  color: white;  
+  text-align: center;
+  text-decoration: none;
+}
+
+input[type=submit]:hover{
+  margin: auto;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  color: black;
+  background-color: #2C323D;
+  margin: 5px;
+  height: 40px;
+  width: 25%;
+  border: 2px solid white;
+  border-radius: 25px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
